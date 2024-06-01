@@ -1,0 +1,6 @@
+vim Dockerfile - открытие докерфайла
+sudo docker volume create yocto-dir - Создание директории для сборки на хост-машине
+sudo docker build --build-arg "USER_NAME=user" -t yocto-image . -  Сборка изображения докера
+sudo docker run -v yocto-dir:/home/user -e mode=build yocto-image - Выполнение контейнера с режимом сборки
+sudo docker run -v yocto-dir:/home/user -e mode=run -it yocto-image - Выполнение контейнера с режимом запуска эмулятора
+sudo docker run -v yocto-dir:/home/user -e mode=run -it yocto-image bash - Выполнение контейнера с переходом в управление
